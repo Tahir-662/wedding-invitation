@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Walima Invitation – Iqra & Tahir</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#fff6f2; --surface:#ffffff; --ink:#4a1426; --muted:#7b5a63; --gold:#9a6f1f; --line:#ecd9d2; --accent:#a3294f;
+  --hero-ink:#fff3e6; --gold-b:#e6c57a;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#240c17; --surface:#341320; --ink:#fbe9e4; --muted:#d0aab4; --gold:#e6c57a; --line:#4d2433; --accent:#f08fa6; color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#240c17; --surface:#341320; --ink:#fbe9e4; --muted:#d0aab4; --gold:#e6c57a; --line:#4d2433; --accent:#f08fa6; color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,system-ui,sans-serif;font-weight:300;line-height:1.7;font-size:1.05rem;overflow-x:clip}
+body.locked{overflow:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;margin:0;line-height:1.05}
+.ar{font-family:Amiri,"Noto Naskh Arabic","Traditional Arabic",serif;direction:rtl;line-height:1.8}
+/* hero */
+.hero{position:relative;overflow:hidden;color:var(--hero-ink);min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 1.25rem;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect x='20' y='20' width='40' height='40' fill='none' stroke='%23e6c57a' stroke-opacity='.13'/%3E%3Crect x='20' y='20' width='40' height='40' fill='none' stroke='%23e6c57a' stroke-opacity='.13' transform='rotate(45 40 40)'/%3E%3C/svg%3E"),
+  radial-gradient(70% 45% at 50% 0%,rgba(230,197,122,.22),transparent 70%),linear-gradient(165deg,#5a0f27 0%,#7d1836 55%,#470a1d 100%)}
+.hero>*:not(.petals){position:relative;z-index:1}
+.hero .bism{font-size:clamp(2rem,8vw,3.2rem);color:var(--gold-b);margin-bottom:1rem}
+.invite{max-width:26rem;opacity:.9;margin:0}
+.host{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,6vw,2.4rem);color:var(--gold-b);margin:0 0 .3rem;line-height:1.2}
+.names{margin:1.4rem 0 .4rem;font-size:clamp(2.8rem,12.5vw,7rem);font-style:italic}
+.names i{display:block;font-style:normal;font-size:.32em;color:var(--gold-b);margin:.15em 0}
+.walima{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--gold-b);border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b);padding:.4rem 2rem;margin-top:1rem}
+.when{margin:1.4rem 0 0;font-size:1.25rem}
+.where{color:var(--gold-b);margin:.2rem 0 0}
+.js .hero .h{opacity:0;transform:translateY(22px);transition:opacity 1s ease calc(var(--i,0)*.17s),transform 1s ease calc(var(--i,0)*.17s)}
+.js .hero.show .h{opacity:1;transform:none}
+.btn{display:inline-block;margin-top:2rem;padding:.95rem 2.4rem;min-height:48px;border:1px solid var(--gold-b);color:var(--hero-ink);text-decoration:none;font-size:1rem;letter-spacing:.06em;border-radius:999px;background:transparent;cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
+.btn:hover,.btn:focus-visible{background:var(--gold-b);color:#470a1d;outline:none}
+/* sections */
+section{max-width:46rem;margin:0 auto;padding:5rem 1.5rem;text-align:center}
+h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:.8rem}
+.orn{color:var(--gold);margin-bottom:1rem;line-height:0}
+.lead{color:var(--muted);max-width:32rem;margin:0 auto}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:2rem}
+.count div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem .2rem .7rem}
+.count b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(2.1rem,9vw,3.6rem);line-height:1;color:var(--accent)}
+.count small{color:var(--muted);font-size:.9rem}
+.timeline{list-style:none;margin:2.2rem auto 0;padding:0 0 0 1.6rem;border-left:1px solid var(--gold);max-width:26rem;text-align:left}
+.timeline li{position:relative;padding-bottom:2rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:calc(-1.6rem - 5px);top:.7rem;width:9px;height:9px;transform:rotate(45deg);background:var(--gold)}
+.timeline time{display:block;color:var(--accent);font-weight:500}
+.timeline h3{font-size:1.9rem}
+.timeline p{margin:.2rem 0 0;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:2rem 1.5rem;margin-top:1.5rem;box-shadow:0 12px 30px rgba(90,15,39,.08)}
+.panel h3{font-size:2rem;color:var(--accent)}
+.panel p{margin:.4rem 0 0;color:var(--muted)}
+.panel .btn{border-color:var(--accent);color:var(--accent)}
+.panel .btn:hover,.panel .btn:focus-visible{background:var(--accent);color:#fff}
+footer{text-align:center;padding:3rem 1.5rem 4rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .ar{font-size:1.5rem;color:var(--gold);max-width:30rem;margin:0 auto}
+footer p{margin:.6rem 0 0}
+.ayah .ar{font-size:clamp(1.7rem,6vw,2.4rem);color:var(--gold);line-height:2.1;margin:0}
+.ayah .tr{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,4vw,1.5rem);max-width:34rem;margin:1.2rem auto 0;color:var(--ink)}
+.ayah cite{display:block;margin-top:1rem;font-style:normal;color:var(--muted);letter-spacing:.08em;font-size:.95rem}
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.js .reveal.zoom{transform:scale(.92)}
+.js .reveal.side{transform:translateX(-28px)}
+.js .reveal.in{opacity:1;transform:none}
+/* petals */
+.petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-8%;border-radius:150% 0 150% 0;background:linear-gradient(135deg,#ffe3e8,#f08fa6);opacity:.85;box-shadow:0 2px 6px rgba(122,22,51,.15);animation:fall linear infinite}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0) rotateX(0)}50%{transform:translate3d(var(--sway),55vh,0) rotate(200deg) rotateX(180deg)}100%{transform:translate3d(calc(var(--sway) * -1),115vh,0) rotate(400deg) rotateX(360deg)}}
+.hero .petal{opacity:.55}
+/* cover */
+.intro{position:fixed;inset:0;z-index:100;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;padding:2rem 1.5rem;text-align:center;color:#7a1633;
+  background:radial-gradient(60% 45% at 15% 18%,#f6e0a2 0,transparent 62%),radial-gradient(55% 50% at 85% 78%,#f3d98f 0,transparent 62%),linear-gradient(115deg,#cf9d50 0%,#e8c577 30%,#f3dc9b 48%,#d6a55a 70%,#e9c97d 100%);
+  background-size:180% 180%,180% 180%,100% 100%;animation:silk 14s ease-in-out infinite alternate;
+  transition:opacity 1.2s ease,transform 1.2s ease,visibility 0s 1.2s}
+.intro.gone{opacity:0;transform:scale(1.06);visibility:hidden;pointer-events:none}
+@keyframes silk{to{background-position:100% 100%,0 0,0 0}}
+.cover-text{position:relative;z-index:1;transition:opacity .5s}
+.cover-text .ar{font-size:clamp(1.8rem,7vw,2.6rem);color:#7a1633}
+.cover-text p{margin:.2rem 0 0;font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-style:italic}
+.seal2{position:relative;z-index:1;width:min(54vw,13rem);aspect-ratio:1;border-radius:50%;border:0;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.15rem;
+  background:radial-gradient(circle at 35% 28%,#c23c63,#8a1d3d 58%,#5e1129);color:#f3d98f;font-family:"Great Vibes","Cormorant Garamond",cursive;
+  box-shadow:0 0 0 .35rem #e2c274,0 0 0 .5rem rgba(143,109,31,.55),0 20px 45px rgba(94,17,41,.5);animation:beat 2.4s ease-in-out infinite;transition:transform 1s ease,opacity 1s ease}
+.seal2::before{content:"";position:absolute;inset:8%;border-radius:50%;border:2px dotted rgba(243,217,143,.55)}
+.seal2::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(120deg,rgba(255,255,255,.38),transparent 42%)}
+.seal2 b{font-weight:400;font-size:clamp(3.4rem,15vw,4.8rem);line-height:1}
+.seal2 span{font-family:system-ui,sans-serif;font-size:1rem;margin:0 .1rem}
+.seal2:focus-visible{outline:3px solid #7a1633;outline-offset:8px}
+@keyframes beat{50%{transform:scale(1.05)}}
+.hint{position:relative;z-index:1;margin:0;letter-spacing:.06em;color:#4d0f21;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+.intro.opening .seal2{animation:none;transform:scale(1.35);opacity:0}
+.intro.opening .cover-text,.intro.opening .hint{opacity:0;animation:none}
+@media (max-width:520px){
+  section{padding:3.8rem 1.25rem}
+  .btn{width:100%;max-width:20rem;text-align:center}
+  .count{gap:.4rem}
+  .walima{padding:.4rem 1.4rem}
+  .panel{padding:1.6rem 1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .seal2,.hint,.intro{animation:none}.intro,.seal2{transition-duration:.01s}
+  .js .reveal,.js .hero .h{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body class="locked">
+
+<div class="intro" id="intro">
+  <div class="petals" id="coverPetals" aria-hidden="true"></div>
+  <div class="cover-text"><div class="ar" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div><p>You’re warmly invited</p></div>
+  <button class="seal2" id="seal" type="button" aria-label="Open the invitation"><b>I</b><span>♥</span><b>T</b></button>
+  <p class="hint">Tap the seal to open</p>
+</div>
+
+<header class="hero" id="hero">
+  <div class="petals" id="heroPetals" aria-hidden="true"></div>
+  <div class="bism ar h" style="--i:0" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <p class="host h" style="--i:1">Mr. & Mrs. Ghulam Nabi</p>
+  <p class="invite h" style="--i:1.5">joyfully invite you to be a part of the Walima celebration of their son</p>
+  <h1 class="names h" style="--i:2">Muhammad Tahir <i>weds</i> Iqra Saleem</h1>
+  <div class="walima h" style="--i:3">Walima</div>
+  <p class="when h" style="--i:4">Tuesday, 22 December 2026</p>
+  <p class="where h" style="--i:4">Grand Cuisine, East Canal Road, Faisalabad</p>
+  <a class="btn h" style="--i:5" href="#day">See the details</a>
+</header>
+
+<section class="ayah" id="ayah">
+  <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
+  <p class="ar reveal" style="--d:.1s" lang="ar">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+  <p class="tr reveal" style="--d:.25s">“And among His signs is that He created for you spouses from among yourselves so that you may find comfort in them, and He placed between you love and mercy.”</p>
+  <cite class="reveal" style="--d:.4s">Surah Ar-Rum (30:21)</cite>
+</section>
+
+<section id="countdown">
+  <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
+  <h2 class="reveal" style="--d:.1s">Counting the days</h2>
+  <p class="lead reveal" style="--d:.2s">We would be honoured by your presence and your duas.</p>
+  <div class="count" role="timer" aria-live="off">
+    <div class="reveal zoom" style="--d:.1s"><b id="d">0</b><small>days</small></div>
+    <div class="reveal zoom" style="--d:.2s"><b id="h">0</b><small>hours</small></div>
+    <div class="reveal zoom" style="--d:.3s"><b id="m">0</b><small>minutes</small></div>
+    <div class="reveal zoom" style="--d:.4s"><b id="s">0</b><small>seconds</small></div>
+  </div>
+</section>
+
+<section id="day">
+  <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
+  <h2 class="reveal" style="--d:.1s">Walima programme</h2>
+  <ol class="timeline">
+    <li class="reveal side" style="--d:.15s"><time>2:00 PM</time><h3>Guests arrive</h3><p>Please be seated and welcomed by the family.</p></li>
+    <li class="reveal side" style="--d:.35s"><time>3:00 PM</time><h3>Lunch</h3><p>Walima lunch will be served.</p></li>
+  </ol>
+</section>
+
+<section id="venue">
+  <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
+  <h2 class="reveal" style="--d:.1s">Venue</h2>
+  <div class="panel reveal zoom" style="--d:.2s">
+    <h3>Grand Cuisine</h3>
+    <p>East Canal Road, near Faisalabad Chamber of Commerce</p>
+    <a class="btn" href="https://maps.app.goo.gl/sG3QTEVVKuPNbF4aA" target="_blank" rel="noopener">Get directions</a>
+  </div>
+</section>
+
+<footer>
+  <p class="ar reveal" lang="ar">بارك الله لكما وبارك عليكما وجمع بينكما في خير</p>
+  <p class="reveal" style="--d:.15s">May Allah bless you both and unite you in goodness.</p>
+  <p class="reveal" style="--d:.3s">Muhammad Tahir & Iqra Saleem</p>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;root.classList.add("js");
+  var calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var target=new Date("2026-12-22T14:00:00+05:00").getTime();
+  var ids={d:document.getElementById("d"),h:document.getElementById("h"),m:document.getElementById("m"),s:document.getElementById("s")};
+  function tick(){
+    var t=Math.max(0,target-Date.now());
+    ids.d.textContent=Math.floor(t/864e5);
+    ids.h.textContent=Math.floor(t%864e5/36e5);
+    ids.m.textContent=Math.floor(t%36e5/6e4);
+    ids.s.textContent=Math.floor(t%6e4/1e3);
+  }
+  tick();setInterval(tick,1000);
+
+  function petals(field,n){
+    if(calm)return;
+    for(var i=0;i<n;i++){
+      var p=document.createElement("i"),w=10+Math.random()*14;
+      p.className="petal";p.style.left=(Math.random()*100)+"%";p.style.width=w+"px";p.style.height=(w*1.3)+"px";
+      p.style.animationDuration=(8+Math.random()*8)+"s";p.style.animationDelay=(-Math.random()*16)+"s";
+      p.style.setProperty("--sway",((Math.random()*80)-40)+"px");
+      field.appendChild(p);
+    }
+  }
+  petals(document.getElementById("coverPetals"),26);
+  petals(document.getElementById("heroPetals"),14);
+
+  var els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window&&!calm){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}});
+    },{threshold:.15,rootMargin:"0px 0px -8% 0px"});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add("in")})}
+
+  var intro=document.getElementById("intro"),seal=document.getElementById("seal");
+  seal.focus();
+  seal.addEventListener("click",function(){
+    if(intro.classList.contains("opening"))return;
+    intro.classList.add("opening");
+    setTimeout(function(){
+      document.getElementById("hero").classList.add("show");
+      intro.classList.add("gone");document.body.classList.remove("locked");window.scrollTo(0,0);
+    },900);
+    setTimeout(function(){intro.remove()},2300);
+  });
+})();
+</script>
+</body>
+</html>
