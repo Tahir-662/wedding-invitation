@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Walima Invitation – Iqra & Tahir</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
 <style>
 :root{
   --bg:#fff6f2; --surface:#ffffff; --ink:#4a1426; --muted:#7b5a63; --gold:#9a6f1f; --line:#ecd9d2; --accent:#a3294f;
@@ -47,10 +47,10 @@ h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:.8rem}
 .count div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem .2rem .7rem}
 .count b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(2.1rem,9vw,3.6rem);line-height:1;color:var(--accent)}
 .count small{color:var(--muted);font-size:.9rem}
-.timeline{list-style:none;margin:2.2rem auto 0;padding:0 0 0 1.6rem;border-left:1px solid var(--gold);max-width:26rem;text-align:left}
+.timeline{list-style:none;margin:2.2rem auto 0;padding:0;padding-inline-start:1.6rem;border-inline-start:1px solid var(--gold);max-width:26rem;text-align:start}
 .timeline li{position:relative;padding-bottom:2rem}
 .timeline li:last-child{padding-bottom:0}
-.timeline li::before{content:"";position:absolute;left:calc(-1.6rem - 5px);top:.7rem;width:9px;height:9px;transform:rotate(45deg);background:var(--gold)}
+.timeline li::before{content:"";position:absolute;inset-inline-start:calc(-1.6rem - 5px);top:.7rem;width:9px;height:9px;transform:rotate(45deg);background:var(--gold)}
 .timeline time{display:block;color:var(--accent);font-weight:500}
 .timeline h3{font-size:1.9rem}
 .timeline p{margin:.2rem 0 0;color:var(--muted)}
@@ -93,11 +93,27 @@ footer p{margin:.6rem 0 0}
 .seal2 b{font-weight:400;font-size:clamp(3.4rem,15vw,4.8rem);line-height:1}
 .seal2 span{font-family:system-ui,sans-serif;font-size:1rem;margin:0 .1rem}
 .seal2:focus-visible{outline:3px solid #7a1633;outline-offset:8px}
-@keyframes beat{50%{transform:scale(1.05)}}
+.seal2:focus:not(:focus-visible){outline:none}
+.seal2{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+button{-webkit-tap-highlight-color:transparent}
+@keyframes beat{50%{scale:1.05}}
 .hint{position:relative;z-index:1;margin:0;letter-spacing:.06em;color:#4d0f21;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.4}}
-.intro.opening .seal2{animation:none;transform:scale(1.35);opacity:0}
-.intro.opening .cover-text,.intro.opening .hint{opacity:0;animation:none}
+.intro.opening .seal2{animation-play-state:paused;transform:scale(1.7);transition:transform 1s ease-in-out}
+.intro.opening .cover-text,.intro.opening .hint,.intro.opening .lang{opacity:0;animation:none}
+.lang{position:relative;z-index:1;text-align:center;transition:opacity .5s}
+.lang-label{display:block;font-size:.95rem;margin-bottom:.6rem;color:#4d0f21}
+.lang-btns{display:flex;gap:.6rem;justify-content:center}
+.lang-btns button{min-height:44px;padding:.4rem 1.5rem;border:1px solid #7a1633;border-radius:999px;background:transparent;color:#7a1633;font:inherit;font-size:1.05rem;cursor:pointer;transition:background .2s,color .2s}
+.lang-btns button.on{background:#7a1633;color:#f3d98f}
+.lang-btns button:focus-visible{outline:3px solid #7a1633;outline-offset:3px}
+.langfab{position:fixed;z-index:50;top:calc(env(safe-area-inset-top,0px) + .7rem);inset-inline-end:.8rem;min-height:40px;padding:.3rem 1.1rem;border:1px solid var(--gold);border-radius:999px;background:var(--surface);color:var(--gold);font:inherit;font-size:1rem;cursor:pointer;box-shadow:0 4px 14px rgba(90,15,39,.18)}
+html[lang="ur"] body{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif;line-height:2.1}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] .host,html[lang="ur"] .walima,html[lang="ur"] .ayah .tr,html[lang="ur"] .cover-text p,html[lang="ur"] footer p:not(.ar){font-family:"Noto Nastaliq Urdu",serif;font-style:normal;line-height:1.9}
+html[lang="ur"] .names{font-size:clamp(2.2rem,9vw,4.6rem);line-height:1.8}
+html[lang="ur"] .names i{font-style:normal;font-size:.45em}
+html[lang="ur"] .timeline h3{font-size:1.5rem}
+html[lang="ur"] .lang-btns button,html[lang="ur"] .btn{font-family:"Noto Nastaliq Urdu",serif}
 @media (max-width:520px){
   section{padding:3.8rem 1.25rem}
   .btn{width:100%;max-width:20rem;text-align:center}
@@ -116,66 +132,69 @@ footer p{margin:.6rem 0 0}
 
 <div class="intro" id="intro">
   <div class="petals" id="coverPetals" aria-hidden="true"></div>
-  <div class="cover-text"><div class="ar" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div><p>You’re warmly invited</p></div>
-  <button class="seal2" id="seal" type="button" aria-label="Open the invitation"><b>I</b><span>♥</span><b>T</b></button>
-  <p class="hint">Tap the seal to open</p>
+  <div class="cover-text"><div class="ar" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div><p data-ur="آپ کو خوش دلی سے مدعو کیا جاتا ہے">You’re warmly invited</p></div>
+  <div class="lang" role="group" aria-label="Language"><span class="lang-label">Choose your language · زبان منتخب کریں</span><div class="lang-btns"><button type="button" data-lang="en" class="on">English</button><button type="button" data-lang="ur">اردو</button></div></div>
+  <button class="seal2" dir="ltr" id="seal" type="button" aria-label="Open the invitation"><b>I</b><span>♥</span><b>T</b></button>
+  <p class="hint" data-ur="کھولنے کے لیے مہر کو دبائیں">Tap the seal to open</p>
 </div>
 
 <header class="hero" id="hero">
   <div class="petals" id="heroPetals" aria-hidden="true"></div>
   <div class="bism ar h" style="--i:0" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-  <p class="host h" style="--i:1">Mr. & Mrs. Ghulam Nabi</p>
-  <p class="invite h" style="--i:1.5">joyfully invite you to be a part of the Walima celebration of their son</p>
-  <h1 class="names h" style="--i:2">Muhammad Tahir <i>weds</i> Iqra Saleem</h1>
-  <div class="walima h" style="--i:3">Walima</div>
-  <p class="when h" style="--i:4">Tuesday, 22 December 2026</p>
-  <p class="where h" style="--i:4">Grand Cuisine, East Canal Road, Faisalabad</p>
-  <a class="btn h" style="--i:5" href="#day">See the details</a>
+  <p class="host h" style="--i:1" data-ur="جناب و محترمہ غلام نبی">Mr. & Mrs. Ghulam Nabi</p>
+  <p class="invite h" style="--i:1.5" data-ur="آپ کو اپنے بیٹے کی تقریبِ ولیمہ میں شرکت کی خوش دلی سے دعوت دیتے ہیں">joyfully invite you to be a part of the Walima celebration of their son</p>
+  <h1 class="names h" style="--i:2" data-ur="محمد طاہر <i>اور</i> اقرا سلیم">Muhammad Tahir <i>weds</i> Iqra Saleem</h1>
+  <div class="walima h" style="--i:3" data-ur="ولیمہ">Walima</div>
+  <p class="when h" style="--i:4" data-ur="منگل، 22 دسمبر 2026">Tuesday, 22 December 2026</p>
+  <p class="where h" style="--i:4" data-ur="گرینڈ کیوزین، ایسٹ کینال روڈ، فیصل آباد">Grand Cuisine, East Canal Road, Faisalabad</p>
+  <a class="btn h" style="--i:5" href="#day" data-ur="تفصیلات دیکھیں">See the details</a>
 </header>
 
 <section class="ayah" id="ayah">
   <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
   <p class="ar reveal" style="--d:.1s" lang="ar">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
-  <p class="tr reveal" style="--d:.25s">“And among His signs is that He created for you spouses from among yourselves so that you may find comfort in them, and He placed between you love and mercy.”</p>
-  <cite class="reveal" style="--d:.4s">Surah Ar-Rum (30:21)</cite>
+  <p class="tr reveal" style="--d:.25s" data-ur="“اور اس کی نشانیوں میں سے ایک یہ ہے کہ اس نے تمہارے لیے تم ہی میں سے جوڑے پیدا کیے تاکہ تم ان کے پاس سکون پاؤ، اور اس نے تمہارے درمیان محبت اور رحمت رکھ دی۔”">“And among His signs is that He created for you spouses from among yourselves so that you may find comfort in them, and He placed between you love and mercy.”</p>
+  <cite class="reveal" style="--d:.4s" data-ur="سورۃ الروم (30:21)">Surah Ar-Rum (30:21)</cite>
 </section>
 
 <section id="countdown">
   <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
-  <h2 class="reveal" style="--d:.1s">Counting the days</h2>
-  <p class="lead reveal" style="--d:.2s">We would be honoured by your presence and your duas.</p>
-  <div class="count" role="timer" aria-live="off">
-    <div class="reveal zoom" style="--d:.1s"><b id="d">0</b><small>days</small></div>
-    <div class="reveal zoom" style="--d:.2s"><b id="h">0</b><small>hours</small></div>
-    <div class="reveal zoom" style="--d:.3s"><b id="m">0</b><small>minutes</small></div>
-    <div class="reveal zoom" style="--d:.4s"><b id="s">0</b><small>seconds</small></div>
+  <h2 class="reveal" style="--d:.1s" data-ur="تقریب میں باقی وقت">Counting the days</h2>
+  <p class="lead reveal" style="--d:.2s" data-ur="آپ کی تشریف آوری اور دعاؤں سے ہماری عزت افزائی ہوگی۔">We would be honoured by your presence and your duas.</p>
+  <div class="count" dir="ltr" role="timer" aria-live="off">
+    <div class="reveal zoom" style="--d:.1s"><b id="d">0</b><small data-ur="دن">days</small></div>
+    <div class="reveal zoom" style="--d:.2s"><b id="h">0</b><small data-ur="گھنٹے">hours</small></div>
+    <div class="reveal zoom" style="--d:.3s"><b id="m">0</b><small data-ur="منٹ">minutes</small></div>
+    <div class="reveal zoom" style="--d:.4s"><b id="s">0</b><small data-ur="سیکنڈ">seconds</small></div>
   </div>
 </section>
 
 <section id="day">
   <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
-  <h2 class="reveal" style="--d:.1s">Walima programme</h2>
+  <h2 class="reveal" style="--d:.1s" data-ur="ولیمہ کا پروگرام">Walima programme</h2>
   <ol class="timeline">
-    <li class="reveal side" style="--d:.15s"><time>2:00 PM</time><h3>Guests arrive</h3><p>Please be seated and welcomed by the family.</p></li>
-    <li class="reveal side" style="--d:.35s"><time>3:00 PM</time><h3>Lunch</h3><p>Walima lunch will be served.</p></li>
+    <li class="reveal side" style="--d:.15s"><time data-ur="دوپہر 2:00 بجے">2:00 PM</time><h3 data-ur="مہمانوں کی آمد">Guests arrive</h3><p data-ur="تشریف رکھیے، اہلِ خانہ آپ کا استقبال کریں گے۔">Please be seated and welcomed by the family.</p></li>
+    <li class="reveal side" style="--d:.35s"><time data-ur="دوپہر 3:00 بجے">3:00 PM</time><h3 data-ur="کھانا">Lunch</h3><p data-ur="ولیمہ کا کھانا پیش کیا جائے گا۔">Walima lunch will be served.</p></li>
   </ol>
 </section>
 
 <section id="venue">
   <div class="orn reveal"><svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><path d="M0 8h48M72 8h48" stroke="currentColor"/><path d="M60 1l7 7-7 7-7-7z" fill="currentColor"/></svg></div>
-  <h2 class="reveal" style="--d:.1s">Venue</h2>
+  <h2 class="reveal" style="--d:.1s" data-ur="مقام">Venue</h2>
   <div class="panel reveal zoom" style="--d:.2s">
-    <h3>Grand Cuisine</h3>
-    <p>East Canal Road, near Faisalabad Chamber of Commerce</p>
-    <a class="btn" href="https://maps.app.goo.gl/sG3QTEVVKuPNbF4aA" target="_blank" rel="noopener">Get directions</a>
+    <h3 data-ur="گرینڈ کیوزین">Grand Cuisine</h3>
+    <p data-ur="ایسٹ کینال روڈ، فیصل آباد چیمبر آف کامرس کے قریب">East Canal Road, near Faisalabad Chamber of Commerce</p>
+    <a class="btn" href="https://maps.app.goo.gl/sG3QTEVVKuPNbF4aA" target="_blank" rel="noopener" data-ur="راستہ دیکھیں">Get directions</a>
   </div>
 </section>
 
 <footer>
   <p class="ar reveal" lang="ar">بارك الله لكما وبارك عليكما وجمع بينكما في خير</p>
-  <p class="reveal" style="--d:.15s">May Allah bless you both and unite you in goodness.</p>
-  <p class="reveal" style="--d:.3s">Muhammad Tahir & Iqra Saleem</p>
+  <p class="reveal" style="--d:.15s" data-ur="اللہ آپ دونوں کو برکت دے اور خیر میں جمع رکھے۔">May Allah bless you both and unite you in goodness.</p>
+  <p class="reveal" style="--d:.3s" data-ur="محمد طاہر اور اقرا سلیم">Muhammad Tahir & Iqra Saleem</p>
 </footer>
+
+<button class="langfab" id="langfab" type="button" aria-label="Change language">اردو</button>
 
 <script>
 (function(){
@@ -213,16 +232,29 @@ footer p{margin:.6rem 0 0}
     els.forEach(function(el){io.observe(el)});
   }else{els.forEach(function(el){el.classList.add("in")})}
 
+  var UR_TITLE="ولیمہ کا دعوت نامہ – طاہر اور اقرا";
+  function setLang(l){
+    var ur=l==="ur";
+    root.lang=ur?"ur":"en";root.dir=ur?"rtl":"ltr";
+    document.querySelectorAll("[data-ur]").forEach(function(el){
+      if(!el.hasAttribute("data-en"))el.setAttribute("data-en",el.innerHTML);
+      el.innerHTML=ur?el.getAttribute("data-ur"):el.getAttribute("data-en");
+    });
+    document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-lang")===l)});
+    document.getElementById("langfab").textContent=ur?"English":"اردو";
+    document.title=ur?UR_TITLE:"Walima Invitation – Tahir & Iqra";
+  }
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"))})});
+  document.getElementById("langfab").addEventListener("click",function(){setLang(root.lang==="ur"?"en":"ur")});
   var intro=document.getElementById("intro"),seal=document.getElementById("seal");
-  seal.focus();
   seal.addEventListener("click",function(){
     if(intro.classList.contains("opening"))return;
     intro.classList.add("opening");
     setTimeout(function(){
       document.getElementById("hero").classList.add("show");
       intro.classList.add("gone");document.body.classList.remove("locked");window.scrollTo(0,0);
-    },900);
-    setTimeout(function(){intro.remove()},2300);
+    },1000);
+    setTimeout(function(){intro.remove()},2400);
   });
 })();
 </script>
